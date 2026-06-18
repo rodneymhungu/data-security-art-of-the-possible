@@ -1,7 +1,9 @@
-# Source artifacts (the deck is distributed via GitHub Releases, not the repo tree)
+# Source artifacts: ignore PDFs/PPTX by default, but allow the one published
+# PDF so GitHub Pages can serve it inline for the in-browser preview.
 *.pdf
 *.pptx
 *.ppt
+!data-security-art-of-the-possible-purview.pdf
 
 # macOS
 .DS_Store
