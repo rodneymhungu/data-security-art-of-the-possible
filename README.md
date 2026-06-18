@@ -6,9 +6,9 @@ A practical PDF guide to data security, governance, compliance, and AI readiness
 
 **Landing page:** https://rodneymhungu.github.io/data-security-art-of-the-possible/
 
-**Direct download:** [latest PDF release](https://github.com/rodneymhungu/data-security-art-of-the-possible/releases/latest)
+**Direct download:** [data-security-art-of-the-possible-purview.pdf](https://rodneymhungu.github.io/data-security-art-of-the-possible/data-security-art-of-the-possible-purview.pdf)
 
-The PDF is distributed through GitHub Releases, not committed to this repository.
+The PDF is committed to this repository and served by the landing page, so the in-page preview works. That committed copy is the canonical, current version. Tagged [Releases](https://github.com/rodneymhungu/data-security-art-of-the-possible/releases) are kept as dated snapshots for version history, not as the primary download, so there is only one file to update.
 
 ## What is inside
 
