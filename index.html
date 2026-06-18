@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Microsoft Purview: Data Security Art of the Possible</title>
+  <meta name="description" content="A practical PDF guide to data security, governance, compliance, and AI readiness with Microsoft Purview.">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #1a1a1a;
+      --muted: #5c5c5c;
+      --line: #e6e6e6;
+      --accent: #0f6cbd;
+      --accent-fg: #ffffff;
+      --card: #fafafa;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #161616;
+        --fg: #ededed;
+        --muted: #a0a0a0;
+        --line: #2b2b2b;
+        --accent: #4aa3e8;
+        --accent-fg: #0b0b0b;
+        --card: #1d1d1d;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+    }
+    main {
+      width: 100%;
+      max-width: 720px;
+      padding: 72px 24px 96px;
+    }
+    header { text-align: center; }
+    h1 {
+      font-size: 2.1rem;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin: 0 0 16px;
+    }
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--muted);
+      margin: 0 auto 40px;
+      max-width: 36em;
+    }
+    .actions {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--accent-fg);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      padding: 14px 32px;
+      border-radius: 8px;
+      transition: opacity 0.15s ease;
+    }
+    .btn:hover { opacity: 0.9; }
+    .secondary {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .secondary a {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    section { margin-top: 48px; }
+    h2 {
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin: 0 0 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+    h3 {
+      font-size: 1.05rem;
+      margin: 24px 0 6px;
+    }
+    p { margin: 0 0 14px; }
+    ul { margin: 0 0 14px; padding-left: 1.2em; }
+    li { margin-bottom: 4px; }
+    .grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: 1fr;
+      margin: 0 0 8px;
+    }
+    @media (min-width: 560px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px 18px;
+    }
+    .card table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+    .card td { padding: 6px 0; vertical-align: top; border-bottom: 1px solid var(--line); }
+    .card tr:last-child td { border-bottom: none; }
+    .card td:first-child { font-weight: 600; padding-right: 14px; white-space: nowrap; }
+    .fine {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    footer {
+      margin-top: 64px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Microsoft Purview: Data Security Art of the Possible</h1>
+      <p class="subtitle">A practical PDF guide to data security, governance, compliance, and AI readiness with Microsoft Purview.</p>
+      <div class="actions">
+        <a class="btn" href="https://github.com/rodneymhungu/data-security-art-of-the-possible/releases/latest/download/data-security-art-of-the-possible-purview.pdf">Download PDF</a>
+      </div>
+      <div class="secondary">
+        <a href="https://github.com/rodneymhungu/data-security-art-of-the-possible/releases/latest/download/data-security-art-of-the-possible-purview.pdf" target="_blank" rel="noopener">Preview in browser</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>About this guide</h2>
+
+      <h3>What it is</h3>
+      <p>A positioning and art of the possible deck on data security and governance with Microsoft Purview. It is written to be read on its own, without a presenter, so you can pick it up at the moment you need it.</p>
+
+      <h3>Who it is for</h3>
+      <ul>
+        <li>Security architects scoping a data security approach</li>
+        <li>Data governance and compliance leads building the internal case</li>
+        <li>Microsoft partners preparing for a customer conversation</li>
+        <li>Anyone who wants the full picture before booking time with a Cloud Solution Architect</li>
+      </ul>
+
+      <h3>What is inside</h3>
+      <div class="card">
+        <table>
+          <tr><td>Current challenges</td><td>Why securing data is hard today, the fragmentation problem, and the cost of getting it wrong</td></tr>
+          <tr><td>Microsoft's approach</td><td>How Purview frames data security, governance, and compliance, and the estate it covers</td></tr>
+          <tr><td>Scenario 1</td><td>Corporate espionage: an insider theft case, the gaps it exposed, and the Purview capabilities that address each, with a demo and getting started path</td></tr>
+          <tr><td>Scenario 2</td><td>GenAI oversharing and leak through M365 Copilot and agents, how Purview helps, with a demo and getting started path</td></tr>
+          <tr><td>Accelerated with AI</td><td>The Purview agents (triage and posture management) and how they speed up data security work</td></tr>
+          <tr><td>Next steps</td><td>How to move from interest to action, including envisioning workshops and FastTrack</td></tr>
+        </table>
+      </div>
+
+      <h3>How to navigate</h3>
+      <p>The deck has built in navigation. The contents page near the front links directly to the start of each section, and every section divider links back to the contents page. This is preserved in the PDF, so you can jump straight to the part you need.</p>
+    </section>
+
+    <section>
+      <h2>Disclaimer and credits</h2>
+      <p class="fine">This deck originates from Microsoft and was produced by its data security product and field teams as part of the Art of the Possible material. The scenarios, structure, and screenshots are Microsoft's work.</p>
+      <p class="fine">Rodney Mhungu assembled and maintains this public version for partner self service. Shared as community reference material with attribution to Microsoft. No ownership or licence is asserted over the Microsoft content. It is not an official Microsoft publication, and it does not replace official Microsoft documentation or a tailored engagement with a Cloud Solution Architect, FastTrack engineer, or Microsoft partner.</p>
+      <p class="fine">Current as of June 2026. Microsoft Purview moves quickly; some capabilities shown may be in preview or may have changed. Treat the screenshots as illustrative rather than the exact current UI, and check Microsoft Learn for the latest detail.</p>
+    </section>
+
+    <footer>
+      <a href="https://github.com/rodneymhungu/data-security-art-of-the-possible">View the repository on GitHub</a>
+    </footer>
+  </main>
+</body>
+</html>
