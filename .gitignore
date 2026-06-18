@@ -1,0 +1,22 @@
+# Source artifacts (the deck is distributed via GitHub Releases, not the repo tree)
+*.pdf
+*.pptx
+*.ppt
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# Editor and tooling cruft
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.tmp
+*.bak
