@@ -135,10 +135,10 @@
       <h1>Microsoft Purview: Data Security Art of the Possible</h1>
       <p class="subtitle">A practical PDF guide to data security, governance, compliance, and AI readiness with Microsoft Purview.</p>
       <div class="actions">
-        <a class="btn" href="data-security-art-of-the-possible-purview.pdf" download>Download PDF</a>
+        <a id="download-pdf" class="btn" href="data-security-art-of-the-possible-purview.pdf" download>Download PDF</a>
       </div>
       <div class="secondary">
-        <a href="data-security-art-of-the-possible-purview.pdf" target="_blank" rel="noopener">Preview in browser</a>
+        <a id="preview-pdf" href="data-security-art-of-the-possible-purview.pdf" target="_blank" rel="noopener">Preview in browser</a>
       </div>
     </header>
 
@@ -183,5 +183,26 @@
       <a href="https://github.com/rodneymhungu/data-security-art-of-the-possible">View the repository on GitHub</a>
     </footer>
   </main>
+
+  <!-- Privacy-friendly analytics (GoatCounter): page views, no cookies. -->
+  <script
+    data-goatcounter="https://rodneymhungu.goatcounter.com/count"
+    async
+    src="https://gc.zgo.at/count.js"></script>
+
+  <!-- Explicit click tracking for the download and preview links. -->
+  <script>
+    function trackClick(id, path, title) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener('click', function () {
+        if (window.goatcounter && window.goatcounter.count) {
+          window.goatcounter.count({ path: path, title: title, event: true });
+        }
+      });
+    }
+    trackClick('download-pdf', '/download-pdf', 'Download PDF');
+    trackClick('preview-pdf', '/preview-pdf', 'Preview in browser');
+  </script>
 </body>
 </html>
