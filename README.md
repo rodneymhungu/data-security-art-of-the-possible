@@ -10,6 +10,12 @@ A practical PDF guide to data security, governance, compliance, and AI readiness
 
 The PDF is committed to this repository and served by the landing page, so the in-page preview works. That committed copy is the canonical, current version. Tagged [Releases](https://github.com/rodneymhungu/data-security-art-of-the-possible/releases) are kept as dated snapshots for version history, not as the primary download, so there is only one file to update.
 
+## How the landing page works
+
+`index.html` is a single page with no build step. A data block at the top of the file holds the deck facts (date, page count, size), the six sections with their page ranges, and a slide index with capability tags. The section cards and the searchable slide index render from that block, and every link opens the PDF at the right page. Slide previews live in `images/`, listed in `images/manifest.json`.
+
+When the PDF is replaced: update `DECK` and `UPDATED` in the data block, check the page numbers in `SECTIONS` and `SLIDES`, and re-render the images listed in the manifest.
+
 ## What is inside
 
 Six sections: current data security challenges, Microsoft's approach with Purview, two worked customer scenarios (corporate espionage, and GenAI oversharing through Copilot), the Purview agents, and recommended next steps. The deck has built in navigation, so you can jump straight to the section you need.

@@ -1,0 +1,14 @@
+{
+  "source": "data-security-art-of-the-possible-purview.pdf (deck dated 17 June 2026)",
+  "rendered": "2026-11-18, PyMuPDF, full slide, no crop unless stated",
+  "images": [
+    { "id": "cover",    "file": "cover.webp",    "section": "hero",       "page": 1,  "shows": "Cover slide",                                              "size": "960x540",  "crop": "none" },
+    { "id": "og",       "file": "og.jpg",        "section": "social preview (og:image)", "page": 1, "shows": "Cover slide",                         "size": "1200x630", "crop": "rendered 1200x675, 22px trimmed top, 23px bottom" },
+    { "id": "slide-06", "file": "slide-06.webp", "section": "challenges", "page": 6,  "shows": "Average of 12 data security solutions per organisation", "size": "640x360",  "crop": "none" },
+    { "id": "slide-10", "file": "slide-10.webp", "section": "approach",   "page": 10, "shows": "Purview: security, governance, compliance",              "size": "640x360",  "crop": "none" },
+    { "id": "slide-14", "file": "slide-14.webp", "section": "scenario-1", "page": 14, "shows": "Corporate espionage story timeline",                     "size": "640x360",  "crop": "none" },
+    { "id": "slide-44", "file": "slide-44.webp", "section": "scenario-2", "page": 44, "shows": "Oversharing story timeline",                             "size": "640x360",  "crop": "none" },
+    { "id": "slide-72", "file": "slide-72.webp", "section": "agents",     "page": 72, "shows": "Triage agents in DLP and Insider Risk Management",       "size": "640x360",  "crop": "none" },
+    { "id": "slide-83", "file": "slide-83.webp", "section": "next",       "page": 83, "shows": "Secure by Default deployment model in four phases",      "size": "640x360",  "crop": "none" }
+  ]
+}

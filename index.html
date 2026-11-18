@@ -1,208 +1,496 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Microsoft Purview: Data Security Art of the Possible</title>
-  <meta name="description" content="A practical PDF guide to data security, governance, compliance, and AI readiness with Microsoft Purview.">
-  <style>
-    :root {
-      --bg: #ffffff;
-      --fg: #1a1a1a;
-      --muted: #5c5c5c;
-      --line: #e6e6e6;
-      --accent: #0f6cbd;
-      --accent-fg: #ffffff;
-      --card: #fafafa;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #161616;
-        --fg: #ededed;
-        --muted: #a0a0a0;
-        --line: #2b2b2b;
-        --accent: #4aa3e8;
-        --accent-fg: #0b0b0b;
-        --card: #1d1d1d;
-      }
-    }
-    * { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--fg);
-      font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-    }
-    main {
-      width: 100%;
-      max-width: 720px;
-      padding: 72px 24px 96px;
-    }
-    header { text-align: center; }
-    h1 {
-      font-size: 2.1rem;
-      line-height: 1.2;
-      letter-spacing: -0.01em;
-      margin: 0 0 16px;
-    }
-    .subtitle {
-      font-size: 1.15rem;
-      color: var(--muted);
-      margin: 0 auto 40px;
-      max-width: 36em;
-    }
-    .actions {
-      text-align: center;
-      margin-bottom: 12px;
-    }
-    .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: var(--accent-fg);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.05rem;
-      padding: 14px 32px;
-      border-radius: 8px;
-      transition: opacity 0.15s ease;
-    }
-    .btn:hover { opacity: 0.9; }
-    .secondary {
-      text-align: center;
-      margin-bottom: 64px;
-    }
-    .secondary a {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-    section { margin-top: 48px; }
-    h2 {
-      font-size: 1.05rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--muted);
-      margin: 0 0 20px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--line);
-    }
-    h3 {
-      font-size: 1.05rem;
-      margin: 24px 0 6px;
-    }
-    p { margin: 0 0 14px; }
-    ul { margin: 0 0 14px; padding-left: 1.2em; }
-    li { margin-bottom: 4px; }
-    .grid {
-      display: grid;
-      gap: 14px;
-      grid-template-columns: 1fr;
-      margin: 0 0 8px;
-    }
-    @media (min-width: 560px) {
-      .grid { grid-template-columns: 1fr 1fr; }
-    }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 16px 18px;
-    }
-    .card table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
-    .card td { padding: 6px 0; vertical-align: top; border-bottom: 1px solid var(--line); }
-    .card tr:last-child td { border-bottom: none; }
-    .card td:first-child { font-weight: 600; padding-right: 14px; white-space: nowrap; }
-    .fine {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-    footer {
-      margin-top: 64px;
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-    footer a { color: var(--muted); }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Data Security Art of the Possible (Purview)</title>
+<meta name="description" content="An 86-slide Microsoft Purview reference deck on data security, governance and AI, with a section guide and a searchable slide index that opens the PDF at the right page.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="rodney.mhungu">
+<meta property="og:title" content="Data Security Art of the Possible (Purview)">
+<meta property="og:description" content="Two worked scenarios, the Purview agents and next steps, with a slide index that opens the PDF at the right page.">
+<meta property="og:url" content="https://rodneymhungu.github.io/data-security-art-of-the-possible/">
+<meta property="og:image" content="https://rodneymhungu.github.io/data-security-art-of-the-possible/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cover slide: Data Security Art of the Possible (Purview).">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://rodneymhungu.github.io/data-security-art-of-the-possible/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&amp;family=Public+Sans:wght@400..700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+<script>
+/* ====================================================================
+   PAGE DATA. Everything below the hero renders from this block.
+
+   DECK      Facts about the PDF. When you replace the PDF, update
+             `dated` (the date on the deck itself), `pages` and `sizeMB`.
+   UPDATED   The date this web page was last changed. Shown in the footer.
+   TAGS      Capability filters for the slide index. `key` is used in
+             SLIDES; `name` is what the reader sees.
+   SECTIONS  The six sections of the deck, in deck order. `from` and `to`
+             are PDF page numbers. `img` is a file in images/ (see
+             images/manifest.json). Change page numbers here and every
+             link on the page follows.
+   SLIDES    One row per slide worth finding: page number, a short title
+             in plain words, and tags. Outline slides that only repeat the
+             contents are left out on purpose.
+
+   To check a page number, open the PDF and read the page counter.
+   ==================================================================== */
+window.PAGE = {
+  DECK: { file: "data-security-art-of-the-possible-purview.pdf", dated: "17 June 2026", pages: 86, sizeMB: 13 },
+  UPDATED: "18 November 2026",
+  TAGS: [
+    { key: "dspm", name: "Posture (DSPM)" },
+    { key: "ip",   name: "Information Protection" },
+    { key: "dlp",  name: "Data Loss Prevention" },
+    { key: "irm",  name: "Insider Risk Management" },
+    { key: "dsi",  name: "Data Security Investigations" },
+    { key: "ai",   name: "Copilot, AI apps and agents" },
+    { key: "agt",  name: "Purview agents" },
+    { key: "gov",  name: "Data governance" },
+    { key: "go",   name: "Getting started" }
+  ],
+  SECTIONS: [
+    { id: "challenges", n: 1, title: "Current challenges", from: 4, to: 7, img: "slide-06.webp",
+      alt: "Slide 6: organisations use an average of 12 solutions to secure their data estate.",
+      what: "Why data security is hard right now: more data types, AI adoption and changing regulation, met by too many separate tools.",
+      use: "Framing the problem before any product is mentioned." },
+    { id: "approach", n: 2, title: "Microsoft's approach", from: 9, to: 12, img: "slide-10.webp",
+      alt: "Slide 10: Microsoft Purview split into Data Security, Data Governance and Data Compliance, with shared classification, labels and audit.",
+      what: "How Purview groups its solutions into security, governance and compliance, and where it applies: Microsoft 365, devices, data estates, AI apps and agents.",
+      use: "Getting the terminology straight before a scenario." },
+    { id: "scenario-1", n: 3, title: "Scenario 1: corporate espionage", from: 14, to: 38, img: "slide-14.webp",
+      alt: "Slide 14: timeline of a trusted employee collecting proprietary information to start her own company.",
+      what: "An insider theft story, the gaps it exposed, then a 19-slide demo: posture management, auto-labelling, insider risk, Adaptive Protection in DLP, the triage agent and Data Security Investigations.",
+      use: "Insider risk and data loss conversations." },
+    { id: "scenario-2", n: 4, title: "Scenario 2: oversharing through Copilot and agents", from: 40, to: 69, img: "slide-44.webp",
+      alt: "Slide 44: timeline of two employees whose confidential project data surfaced through Copilot and ChatGPT.",
+      what: "A confidential project that leaks through Copilot and a consumer AI app, then a 22-slide demo: oversharing assessments, default site labels, DLP for Copilot and agents, label inheritance and agent risk in posture management.",
+      use: "Copilot readiness and AI governance conversations." },
+    { id: "agents", n: 5, title: "Accelerated with AI: the Purview agents", from: 71, to: 73, img: "slide-72.webp",
+      alt: "Slide 72: Data Security Triage Agents in DLP and Insider Risk Management, with alert queue screenshots.",
+      what: "The triage agents in Data Loss Prevention and Insider Risk Management, and the Data Security Posture Management agent.",
+      use: "Teams worried about alert volume." },
+    { id: "next", n: 6, title: "Next steps and resources", from: 75, to: 86, img: "slide-83.webp",
+      alt: "Slide 83: Secure by Default deployment model, four phases from foundational to strategic.",
+      what: "Where to start (posture management), common causes of oversharing, the Purview Deployment Models, a phased Secure by Default plan and data governance.",
+      use: "Turning the conversation into a plan." }
+  ],
+  SLIDES: [
+    [2,  "Contents page with a link to each section", ["go"]],
+    [4,  "Top priorities for data security leaders (Data Security Index 2025)", []],
+    [5,  "Why securing data is complex", []],
+    [6,  "Organisations average 12 separate data security tools", []],
+    [7,  "What fragmented tooling leads to", []],
+    [10, "Purview at a glance: security, governance, compliance", ["gov"]],
+    [11, "Purview solution map", ["gov"]],
+    [12, "Where Purview applies: Microsoft 365, devices, data estates, AI apps and agents", ["ai"]],
+    [14, "Corporate espionage story: Jane Doe", ["irm"]],
+    [15, "What organisations need: discover, protect, investigate", []],
+    [16, "Microsoft's approach to data security", ["dspm", "ip", "dlp", "irm", "dsi"]],
+    [17, "Where Purview would have closed each gap", ["irm", "dlp"]],
+    [18, "DSPM: posture metrics overview", ["dspm"]],
+    [19, "DSPM: choose an objective to investigate", ["dspm"]],
+    [20, "DSPM: data risk patterns for each objective", ["dspm"]],
+    [21, "DSPM: remediation plan with estimated impact", ["dspm"]],
+    [22, "Posture agent finds and remediates risky content", ["dspm", "agt"]],
+    [23, "Posture reports: classification, labelling and protection coverage", ["dspm", "ip"]],
+    [24, "Information Protection: auto-label files with sensitive content", ["ip"]],
+    [25, "Insider Risk Management: a user's risk factors", ["irm"]],
+    [26, "Insider Risk Management: activity chart for anomalous behaviour", ["irm"]],
+    [27, "Insider Risk Management: sequence detection", ["irm"]],
+    [28, "DLP: Adaptive Protection as a policy condition", ["dlp", "irm"]],
+    [29, "DLP: stricter protection for elevated-risk users", ["dlp"]],
+    [30, "Insider Risk Management: risk level raised by a sequence of activities", ["irm"]],
+    [31, "Triage agent: prioritise alerts by organisational priorities", ["agt", "dlp", "irm"]],
+    [32, "Triage agent: contact document owners with recommended actions", ["agt"]],
+    [33, "Data Security Investigations: launch from Insider Risk Management", ["dsi", "irm"]],
+    [34, "Data Security Investigations: categorise impacted data and severity", ["dsi"]],
+    [35, "Data Security Investigations: AI content analysis of risks", ["dsi"]],
+    [36, "Data Security Investigations: review findings per asset", ["dsi"]],
+    [37, "Scenario 1, step 1: turn on DSPM", ["dspm", "go"]],
+    [38, "Scenario 1, step 2: build protection controls", ["ip", "dlp", "go"]],
+    [40, "Questions to ask about GenAI use", ["ai"]],
+    [41, "Questions to ask about agents", ["ai"]],
+    [42, "AI data risks: overexposure and oversharing", ["ai"]],
+    [43, "Securing data for all AI and agents", ["ai"]],
+    [44, "Oversharing story: John, Alice and Project Obsidian", ["ai"]],
+    [45, "How Contoso could have prevented the leak", ["ai"]],
+    [46, "DSPM: GenAI usage and oversharing recommendations", ["dspm", "ai"]],
+    [47, "DSPM: risk assessment for SharePoint, OneDrive and Fabric", ["dspm"]],
+    [48, "DSPM: scan items from the assessment", ["dspm"]],
+    [49, "DSPM for AI: default sensitivity label for a SharePoint site", ["dspm", "ip"]],
+    [50, "DSPM for AI: DLP policy that stops Copilot summarising labelled files", ["dlp", "ai"]],
+    [51, "Copilot blocked from summarising a labelled file", ["dlp", "ai"]],
+    [52, "Copilot agent answers only with data the user can access", ["ai"]],
+    [53, "Agent responses show the source sensitivity labels", ["ip", "ai"]],
+    [54, "Label inheritance in agent responses", ["ip", "ai"]],
+    [55, "DLP for agents in Microsoft 365 Copilot", ["dlp", "ai"]],
+    [56, "Outlook: DLP blocks an agent sending sensitive data", ["dlp", "ai"]],
+    [57, "Copilot: prompts with sensitive data blocked", ["dlp", "ai"]],
+    [58, "ChatGPT: DLP blocks a sensitive prompt", ["dlp", "ai"]],
+    [59, "DSPM: GenAI apps view and policy coverage", ["dspm", "ai"]],
+    [60, "New AI risk surfaces and requirements", ["ai"]],
+    [61, "Copilot Studio: knowledge sources show sensitivity labels", ["ip", "ai"]],
+    [62, "DSPM: inventory of first and third party agents", ["dspm", "ai"]],
+    [63, "DSPM: risk, policy coverage and activity for one agent", ["dspm", "ai"]],
+    [64, "DSPM: risky activity flagged for an agent", ["dspm", "ai"]],
+    [65, "Insider Risk Management: risk level for an agent", ["irm", "ai"]],
+    [66, "DLP stops an agent summarising content", ["dlp", "ai"]],
+    [67, "Agent kept from sending data outside the organisation", ["dlp", "ai"]],
+    [68, "Scenario 2, step 1: turn on DSPM for GenAI risks", ["dspm", "ai", "go"]],
+    [69, "Scenario 2, step 2: build protection controls", ["ip", "dlp", "go"]],
+    [72, "Triage agents in DLP and Insider Risk Management", ["agt", "dlp", "irm"]],
+    [73, "Data Security Posture Management agent", ["agt", "dspm"]],
+    [75, "Next steps: partner workshop and FastTrack", ["go"]],
+    [76, "Not sure where to start? Posture management", ["dspm", "go"]],
+    [77, "DSPM overview", ["dspm"]],
+    [78, "How DSPM works", ["dspm"]],
+    [79, "Common causes of oversharing", ["ai", "go"]],
+    [80, "Secure and govern AI apps and agents", ["ai", "dspm"]],
+    [81, "AI posture management", ["ai", "dspm"]],
+    [82, "Purview Deployment Models", ["go"]],
+    [83, "Secure by Default and reduce oversharing, in four phases", ["ip", "dlp", "go"]],
+    [84, "Microsoft's approach to data governance", ["gov"]],
+    [85, "Federated data governance", ["gov"]],
+    [86, "Resources: handbook and blueprints", ["go"]]
+  ]
+};
+</script>
+
+<style>
+:root{
+  --paper:#fbfaf7; --paper-2:#f2f0ea; --paper-3:#e9e6de;
+  --ink:#151a22; --ink-2:#4b5563; --ink-3:#6b7280; --rule:#d9d5cb;
+  --accent:#0f4c81; --accent-2:#0b3a63; --accent-soft:#e6eef7;
+  --signal:#8a5a00; --signal-bg:#fbefd6;
+  --shadow:0 1px 0 rgba(21,26,34,.06), 0 8px 24px -16px rgba(21,26,34,.25);
+  --dot:rgba(21,26,34,.045);
+  --serif:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --sans:"Public Sans","Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+  --measure:68ch;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#111418; --paper-2:#171b21; --paper-3:#1f242c;
+    --ink:#ecebe6; --ink-2:#b8bcc4; --ink-3:#8b919b; --rule:#2b313a;
+    --accent:#7fb3e6; --accent-2:#a9cdf2; --accent-soft:#182636;
+    --signal:#f2c56b; --signal-bg:#3a2a08;
+    --shadow:0 1px 0 rgba(0,0,0,.3), 0 8px 24px -16px rgba(0,0,0,.7);
+    --dot:rgba(255,255,255,.04);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#111418; --paper-2:#171b21; --paper-3:#1f242c;
+  --ink:#ecebe6; --ink-2:#b8bcc4; --ink-3:#8b919b; --rule:#2b313a;
+  --accent:#7fb3e6; --accent-2:#a9cdf2; --accent-soft:#182636;
+  --signal:#f2c56b; --signal-bg:#3a2a08;
+  --shadow:0 1px 0 rgba(0,0,0,.3), 0 8px 24px -16px rgba(0,0,0,.7);
+  --dot:rgba(255,255,255,.04);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:4.5rem}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:clamp(.98rem,.93rem + .25vw,1.08rem);line-height:1.6;
+  background-image:radial-gradient(var(--dot) 1px,transparent 1px);background-size:22px 22px;
+}
+a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.16em;text-decoration-color:color-mix(in srgb,var(--accent) 45%,transparent)}
+a:hover{color:var(--accent-2);text-decoration-color:currentColor}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;letter-spacing:-.012em;margin:0;color:var(--ink)}
+h1{font-size:clamp(2.2rem,1.5rem + 3vw,3.6rem)}
+h2{font-size:clamp(1.6rem,1.2rem + 1.5vw,2.2rem);margin-block:0 .6rem}
+h3{font-size:clamp(1.15rem,1.05rem + .4vw,1.35rem)}
+p{margin:0 0 1rem;max-width:var(--measure)}
+.k{font-family:var(--mono);font-size:.74rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.muted{color:var(--ink-2)}
+
+.topbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-block-end:1px solid var(--rule)}
+.topbar .in{display:flex;align-items:center;gap:1rem;padding:.55rem clamp(1rem,3vw,2rem);max-width:1180px;margin-inline:auto}
+.brand{font-family:var(--serif);font-weight:700;font-size:1.05rem;text-decoration:none;color:var(--ink);white-space:nowrap}
+.brand span{color:var(--accent)}
+.topnav{display:flex;gap:1.1rem;margin-inline-start:auto;font-size:.86rem}
+.topnav a{color:var(--ink-2);text-decoration:none}
+.topnav a:hover{color:var(--ink)}
+.theme-btn{font:inherit;font-size:.8rem;font-weight:600;color:var(--ink-2);background:none;border:1px solid var(--rule);border-radius:6px;padding:.35rem .6rem;cursor:pointer}
+.theme-btn:hover{color:var(--ink);border-color:var(--ink-3)}
+@media (max-width:640px){.topnav{display:none}.theme-btn{margin-inline-start:auto}}
+
+.wrap{max-width:1180px;margin-inline:auto;padding:0 clamp(1rem,3vw,2rem)}
+section.block{padding-block:clamp(2.2rem,4vw,3.4rem);border-block-end:1px solid var(--rule)}
+section.block:last-of-type{border-block-end:0}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center;padding-block:clamp(2.2rem,5vw,4.5rem)}
+.hero .lead{font-size:clamp(1.08rem,1rem + .4vw,1.25rem);color:var(--ink-2);margin-block:1rem 1.4rem}
+.facts{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;font-family:var(--mono);font-size:.78rem;color:var(--ink-2);margin:0 0 1.5rem;padding:0;list-style:none}
+.facts li{margin:0}
+.facts b{color:var(--ink);font-weight:600}
+.actions{display:flex;flex-wrap:wrap;gap:.7rem 1rem;align-items:center}
+.btn{display:inline-block;background:var(--accent);color:var(--paper);text-decoration:none;font-weight:600;padding:.75rem 1.4rem;border-radius:6px;box-shadow:var(--shadow)}
+.btn:hover{background:var(--accent-2);color:var(--paper)}
+.link-2{font-weight:600}
+.cover{margin:0;border:1px solid var(--rule);border-radius:8px;overflow:hidden;box-shadow:var(--shadow);background:var(--paper-2)}
+.cover img{display:block;width:100%;height:auto}
+@media (max-width:820px){.hero{grid-template-columns:1fr}.cover{order:-1;max-width:520px}}
+
+/* currency note */
+.note{border:1px solid color-mix(in srgb,var(--signal) 35%,var(--rule));background:var(--signal-bg);border-radius:8px;padding:1rem 1.2rem;max-width:var(--measure)}
+.note p{margin:0 0 .5rem}
+.note p:last-child{margin:0}
+.note .k{color:var(--signal)}
+
+/* sections */
+.intro{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:.5rem 2rem;margin-block-end:1.4rem}
+.intro p{margin:0}
+.sections{list-style:none;margin:0;padding:0;display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr))}
+.sec{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--rule);border-radius:8px;overflow:hidden;box-shadow:var(--shadow)}
+.sec img{display:block;width:100%;height:auto;border-block-end:1px solid var(--rule);background:var(--paper-2)}
+.sec .body{padding:1rem 1.1rem 1.15rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
+.sec .meta{display:flex;justify-content:space-between;gap:1rem}
+.sec h3{margin:0}
+.sec p{margin:0;font-size:.95rem}
+.sec .use{font-size:.88rem;color:var(--ink-2)}
+.sec .use b{color:var(--ink);font-weight:600}
+.sec .go{margin-block-start:auto;padding-block-start:.4rem;font-weight:600}
+
+/* slide index */
+.tools{display:flex;flex-wrap:wrap;gap:.8rem 1rem;align-items:center;margin-block-end:.9rem}
+.search{flex:1 1 260px;max-width:420px;font:inherit;font-size:.95rem;color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:.6rem .8rem}
+.search::placeholder{color:var(--ink-3)}
+.count{font-family:var(--mono);font-size:.78rem;color:var(--ink-2)}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 1.2rem;padding:0;list-style:none}
+.chip{font:inherit;font-size:.82rem;font-weight:600;color:var(--ink-2);background:var(--paper);border:1px solid var(--rule);border-radius:999px;padding:.32rem .8rem;cursor:pointer}
+.chip:hover{color:var(--ink);border-color:var(--ink-3)}
+.chip[aria-pressed="true"]{color:var(--accent);background:var(--accent-soft);border-color:var(--accent)}
+.slides{list-style:none;margin:0;padding:0;border-block-start:1px solid var(--rule)}
+.slides li{margin:0;border-block-end:1px solid var(--rule)}
+.slides a{display:grid;grid-template-columns:4.6rem minmax(0,1fr) auto;gap:.3rem 1rem;align-items:baseline;padding:.65rem .4rem;text-decoration:none;color:var(--ink)}
+.slides a:hover{background:var(--paper-2)}
+.slides .pg{font-family:var(--mono);font-size:.8rem;color:var(--ink-3);white-space:nowrap}
+.slides .sec-name{font-family:var(--mono);font-size:.72rem;color:var(--ink-3);text-align:right;white-space:nowrap}
+.slides .tags{grid-column:2 / -1;display:flex;flex-wrap:wrap;gap:.3rem;margin:0}
+.tag{font-size:.7rem;font-weight:600;color:var(--ink-2);background:var(--paper-2);border-radius:3px;padding:.05em .45em}
+.empty{padding:1rem .4rem;color:var(--ink-2)}
+@media (max-width:640px){.slides a{grid-template-columns:4.2rem minmax(0,1fr)}.slides .sec-name{display:none}}
+
+/* about */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1.5rem 3rem}
+.cols h3{margin-block:0 .5rem}
+.cols ul{margin:0 0 1rem;padding-inline-start:1.2rem}
+.cols li{margin-block-end:.35rem}
+.fine{font-size:.9rem;color:var(--ink-2)}
+
+footer{border-block-start:1px solid var(--rule);padding-block:1.6rem 2.4rem;font-size:.85rem;color:var(--ink-2)}
+footer .in{display:flex;flex-wrap:wrap;gap:.6rem 2rem;justify-content:space-between}
+footer p{margin:0}
+footer a{color:var(--ink-2)}
+
+@media (prefers-reduced-motion: no-preference){
+  .sec{transition:transform .15s ease, box-shadow .15s ease}
+  .sec:hover{transform:translateY(-2px)}
+}
+</style>
 </head>
 <body>
-  <main>
-    <header>
-      <h1>Microsoft Purview: Data Security Art of the Possible</h1>
-      <p class="subtitle">A practical PDF guide to data security, governance, compliance, and AI readiness with Microsoft Purview.</p>
-      <div class="actions">
-        <a id="download-pdf" class="btn" href="data-security-art-of-the-possible-purview.pdf" download>Download PDF</a>
+
+<header class="topbar">
+  <div class="in">
+    <a class="brand" href="#top">Art of the Possible <span>Purview</span></a>
+    <nav class="topnav" aria-label="On this page">
+      <a href="#sections">Sections</a>
+      <a href="#slides">Find a slide</a>
+      <a href="#about">About</a>
+    </nav>
+    <button class="theme-btn" type="button" id="theme-btn" aria-label="Switch colour theme">Theme</button>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+
+    <section class="hero" aria-labelledby="title">
+      <div>
+        <p class="k">Microsoft Purview · reference deck</p>
+        <h1 id="title">Data Security Art of the Possible</h1>
+        <p class="lead">Two worked scenarios show what Microsoft Purview does about insider theft and about oversharing through Copilot and agents, slide by slide. The deck is written to be read without a presenter.</p>
+        <ul class="facts">
+          <li><b data-fill="pages">86</b> slides</li>
+          <li>PDF, <b data-fill="size">13 MB</b></li>
+          <li>Deck dated <b data-fill="dated">17 June 2026</b></li>
+        </ul>
+        <div class="actions">
+          <a id="download-pdf" class="btn" href="data-security-art-of-the-possible-purview.pdf" download>Download the PDF</a>
+          <a id="preview-pdf" class="link-2" href="data-security-art-of-the-possible-purview.pdf" target="_blank" rel="noopener">Open the PDF in your browser</a>
+        </div>
       </div>
-      <div class="secondary">
-        <a id="preview-pdf" href="data-security-art-of-the-possible-purview.pdf" target="_blank" rel="noopener">Preview in browser</a>
-      </div>
-    </header>
-
-    <section>
-      <h2>About this guide</h2>
-
-      <h3>What it is</h3>
-      <p>A positioning and art of the possible deck on data security and governance with Microsoft Purview. It is written to be read on its own, without a presenter, so you can pick it up at the moment you need it.</p>
-
-      <h3>Who it is for</h3>
-      <ul>
-        <li>Security architects scoping a data security approach</li>
-        <li>Data governance and compliance leads building the internal case</li>
-        <li>Microsoft partners preparing for a customer conversation</li>
-        <li>Anyone who wants the full picture before booking time with a Cloud Solution Architect</li>
-      </ul>
-
-      <h3>What is inside</h3>
-      <div class="card">
-        <table>
-          <tr><td>Current challenges</td><td>Why securing data is hard today, the fragmentation problem, and the cost of getting it wrong</td></tr>
-          <tr><td>Microsoft's approach</td><td>How Purview frames data security, governance, and compliance, and the estate it covers</td></tr>
-          <tr><td>Scenario 1</td><td>Corporate espionage: an insider theft case, the gaps it exposed, and the Purview capabilities that address each, with a demo and getting started path</td></tr>
-          <tr><td>Scenario 2</td><td>GenAI oversharing and leak through M365 Copilot and agents, how Purview helps, with a demo and getting started path</td></tr>
-          <tr><td>Accelerated with AI</td><td>The Purview agents (triage and posture management) and how they speed up data security work</td></tr>
-          <tr><td>Next steps</td><td>How to move from interest to action, including envisioning workshops and FastTrack</td></tr>
-        </table>
-      </div>
-
-      <h3>How to navigate</h3>
-      <p>The deck has built in navigation. The contents page near the front links directly to the start of each section, and every section divider links back to the contents page. This is preserved in the PDF, so you can jump straight to the part you need.</p>
+      <figure class="cover">
+        <img src="images/cover.webp" width="960" height="540" alt="Cover slide: Data Security Art of the Possible (Purview), Rodney Mhungu, Senior Solution Engineer." fetchpriority="high">
+      </figure>
     </section>
 
-    <section>
-      <h2>Disclaimer and credits</h2>
-      <p class="fine">This deck originates from Microsoft and was produced by its data security product and field teams as part of the Art of the Possible material. The scenarios, structure, and screenshots are Microsoft's work.</p>
-      <p class="fine">Rodney Mhungu assembled and maintains this public version for partner self service. Shared as community reference material with attribution to Microsoft. No ownership or licence is asserted over the Microsoft content. It is not an official Microsoft publication, and it does not replace official Microsoft documentation or a tailored engagement with a Cloud Solution Architect, FastTrack engineer, or Microsoft partner.</p>
-      <p class="fine">Current as of June 2026. Microsoft Purview moves quickly; some capabilities shown may be in preview or may have changed. Treat the screenshots as illustrative rather than the exact current UI, and check Microsoft Learn for the latest detail.</p>
+    <div class="note" role="note">
+      <p class="k">How current is this</p>
+      <p>The deck is dated <span data-fill="dated">17 June 2026</span>. Purview ships changes every month, and the deck does not say which features shown are generally available and which are in preview. Before you rely on a capability, check <a href="https://learn.microsoft.com/en-us/purview/whats-new" target="_blank" rel="noopener">What's new in Microsoft Purview</a> on Microsoft Learn.</p>
+    </div>
+
+    <section class="block" id="sections" aria-labelledby="sections-h">
+      <div class="intro">
+        <div>
+          <h2 id="sections-h">Start where you need to</h2>
+          <p class="muted">Six sections, in deck order. Each link opens the PDF at the first slide of that section.</p>
+        </div>
+      </div>
+      <ol class="sections" id="section-list"></ol>
+      <noscript><p>The section guide needs JavaScript. <a href="data-security-art-of-the-possible-purview.pdf">Open the PDF</a> and use the contents page on slide 2.</p></noscript>
     </section>
 
-    <footer>
-      <a href="https://github.com/rodneymhungu/data-security-art-of-the-possible">View the repository on GitHub</a>
-    </footer>
-  </main>
+    <section class="block" id="slides" aria-labelledby="slides-h">
+      <h2 id="slides-h">Find a slide</h2>
+      <p class="muted">Search by product or task, or pick a capability. Each result opens the PDF at that slide.</p>
+      <div class="tools">
+        <label class="k" for="q" style="position:absolute;left:-9999px">Search slides</label>
+        <input class="search" id="q" type="search" placeholder="Search, for example: Copilot, labels, insider" autocomplete="off">
+        <span class="count" id="count" aria-live="polite"></span>
+      </div>
+      <ul class="chips" id="chips" aria-label="Filter by capability"></ul>
+      <ul class="slides" id="slide-list"></ul>
+      <noscript><p>The slide index needs JavaScript. <a href="data-security-art-of-the-possible-purview.pdf">Open the PDF</a> instead.</p></noscript>
+    </section>
 
-  <!-- Privacy-friendly analytics (GoatCounter): page views, no cookies. -->
-  <script
-    data-goatcounter="https://rodneymhungu.goatcounter.com/count"
-    async
-    src="https://gc.zgo.at/count.js"></script>
+    <section class="block" id="about" aria-labelledby="about-h">
+      <h2 id="about-h">About this deck</h2>
+      <div class="cols">
+        <div>
+          <h3>Who it is for</h3>
+          <ul>
+            <li>Security architects scoping a data security approach</li>
+            <li>Data governance and compliance leads building the internal case</li>
+            <li>Microsoft partners preparing for a customer conversation</li>
+            <li>Anyone who wants the full picture before booking time with a Cloud Solution Architect</li>
+          </ul>
+          <h3>Moving around the PDF</h3>
+          <p>Slide 2 is a contents page that links to each section, and every section divider links back to it. The links work in most PDF readers.</p>
+        </div>
+        <div>
+          <h3>Credits</h3>
+          <p class="fine">The deck comes from Microsoft. Its data security product and field teams produced it as part of the Art of the Possible material, and the scenarios, structure and screenshots are their work.</p>
+          <p class="fine">Rodney Mhungu maintains this public copy for partner self-service. It is shared as community reference material with attribution to Microsoft, and no ownership or licence is claimed over the Microsoft content. It is not an official Microsoft publication and does not replace Microsoft documentation or an engagement with a Cloud Solution Architect, FastTrack engineer or Microsoft partner.</p>
+          <p class="fine">Screenshots in the deck are illustrative and may not match the current interface.</p>
+        </div>
+      </div>
+    </section>
 
-  <!-- Explicit click tracking for the download and preview links. -->
-  <script>
-    function trackClick(id, path, title) {
-      var el = document.getElementById(id);
-      if (!el) return;
-      el.addEventListener('click', function () {
-        if (window.goatcounter && window.goatcounter.count) {
-          window.goatcounter.count({ path: path, title: title, event: true });
-        }
-      });
-    }
-    trackClick('download-pdf', '/download-pdf', 'Download PDF');
-    trackClick('preview-pdf', '/preview-pdf', 'Preview in browser');
-  </script>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap in">
+    <p>Maintained by Rodney Mhungu. Page updated <span data-fill="updated">18 November 2026</span>.</p>
+    <p><a href="https://github.com/rodneymhungu/data-security-art-of-the-possible/issues/new/choose">Report something out of date</a> · <a href="https://github.com/rodneymhungu/data-security-art-of-the-possible">Repository on GitHub</a></p>
+  </div>
+</footer>
+
+<!-- Privacy-friendly analytics (GoatCounter): page views, no cookies. -->
+<script data-goatcounter="https://rodneymhungu.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+
+<script>
+(function () {
+  var P = window.PAGE, D = P.DECK;
+  var pdf = function (page) { return D.file + "#page=" + page; };
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+
+  function track(path, title) {
+    if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: path, title: title, event: true });
+  }
+
+  // Facts that appear in prose.
+  var fills = { pages: D.pages, size: D.sizeMB + " MB", dated: D.dated, updated: P.UPDATED };
+  document.querySelectorAll("[data-fill]").forEach(function (el) { el.textContent = fills[el.getAttribute("data-fill")]; });
+
+  // Section cards.
+  $("section-list").innerHTML = P.SECTIONS.map(function (s) {
+    return '<li class="sec" id="s-' + s.id + '">' +
+      '<img src="images/' + s.img + '" width="640" height="360" loading="lazy" alt="' + esc(s.alt) + '">' +
+      '<div class="body">' +
+        '<div class="meta"><span class="k">Section ' + s.n + '</span><span class="k">Slides ' + s.from + ' to ' + s.to + '</span></div>' +
+        '<h3>' + esc(s.title) + '</h3>' +
+        '<p>' + esc(s.what) + '</p>' +
+        '<p class="use"><b>Use it for:</b> ' + esc(s.use) + '</p>' +
+        '<a class="go" data-sec="' + s.id + '" href="' + pdf(s.from) + '" target="_blank" rel="noopener">Open ' + esc(s.title) + ' at slide ' + s.from + '</a>' +
+      '</div></li>';
+  }).join("");
+
+  // Slide index.
+  var tagName = {}; P.TAGS.forEach(function (t) { tagName[t.key] = t.name; });
+  var secOf = function (pg) {
+    for (var i = 0; i < P.SECTIONS.length; i++) if (pg >= P.SECTIONS[i].from && pg <= P.SECTIONS[i].to) return P.SECTIONS[i];
+    return null;
+  };
+  var rows = P.SLIDES.map(function (r) {
+    var s = secOf(r[0]);
+    var text = [r[1], s ? s.title : "Contents"].concat(r[2].map(function (k) { return tagName[k]; })).join(" ").toLowerCase();
+    return { pg: r[0], title: r[1], tags: r[2], sec: s ? s.title : "Contents", text: text };
+  });
+
+  var active = null;
+  $("chips").innerHTML = '<li><button class="chip" type="button" aria-pressed="true" data-tag="">All</button></li>' +
+    P.TAGS.map(function (t) { return '<li><button class="chip" type="button" aria-pressed="false" data-tag="' + t.key + '">' + esc(t.name) + '</button></li>'; }).join("");
+
+  function render() {
+    var q = $("q").value.trim().toLowerCase();
+    var words = q ? q.split(/\s+/) : [];
+    var hits = rows.filter(function (r) {
+      if (active && r.tags.indexOf(active) < 0) return false;
+      return words.every(function (w) { return r.text.indexOf(w) >= 0; });
+    });
+    $("slide-list").innerHTML = hits.length ? hits.map(function (r) {
+      return '<li><a data-slide="' + r.pg + '" href="' + pdf(r.pg) + '" target="_blank" rel="noopener">' +
+        '<span class="pg">Slide ' + r.pg + '</span>' +
+        '<span>' + esc(r.title) + '</span>' +
+        '<span class="sec-name">' + esc(r.sec) + '</span>' +
+        (r.tags.length ? '<span class="tags">' + r.tags.map(function (k) { return '<span class="tag">' + esc(tagName[k]) + '</span>'; }).join("") + '</span>' : '') +
+      '</a></li>';
+    }).join("") : '<li class="empty">No slides match. Try a shorter word, or choose All.</li>';
+    $("count").textContent = hits.length + " of " + rows.length + " slides";
+  }
+
+  $("q").addEventListener("input", render);
+  $("chips").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    active = b.getAttribute("data-tag") || null;
+    $("chips").querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+    render();
+  });
+  render();
+
+  // Click tracking: downloads, previews, section and slide opens.
+  $("download-pdf").addEventListener("click", function () { track("/download-pdf", "Download PDF"); });
+  $("preview-pdf").addEventListener("click", function () { track("/preview-pdf", "Preview in browser"); });
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest("a[data-sec], a[data-slide]"); if (!a) return;
+    if (a.dataset.sec) track("/open-section/" + a.dataset.sec, "Open section: " + a.dataset.sec);
+    else track("/open-slide/" + a.dataset.slide, "Open slide " + a.dataset.slide);
+  });
+
+  // Theme switch: follows the system until the reader chooses.
+  var root = document.documentElement, btn = $("theme-btn");
+  try { var saved = localStorage.getItem("theme"); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") ? root.getAttribute("data-theme") === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+  });
+})();
+</script>
 </body>
 </html>
